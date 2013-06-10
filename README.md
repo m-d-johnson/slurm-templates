@@ -17,3 +17,7 @@ $ sbatch <sbatch file>
 To check the queue status, use:
 
 $ squeue
+
+To cancel a job
+
+$ scancel <job id>
