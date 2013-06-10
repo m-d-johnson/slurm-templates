@@ -12,8 +12,8 @@ ippp.tickets@durham.ac.uk
 
 To submit the file to the batch system use the following command:
 
-sbatch <sbatch file>
+$ sbatch <sbatch file>
 
 To check the queue status, use:
 
-squeue
+$ squeue
