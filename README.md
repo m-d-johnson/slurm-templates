@@ -1,14 +1,13 @@
 slurm-templates
 ===============
 
-SLURM job submit template(s) for IPPP
+SLURM job submit template(s) for SLURM cluster
 
-These templates should work immediately on the IPPP batch system.  Please
+These templates should work immediately on the local batch system.  Please
 note that you will need to substitute various pathnames and username
 fields to fit with your requirements.
 
-If you have questions please open a ticket by emailing 
-ippp.tickets@durham.ac.uk
+If you have questions please open a ticket by emailing me
 
 To submit the file to the batch system use the following command:
 
