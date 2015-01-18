@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 # First we set up the SLURM environment.
 # All the SBATCH directives below are optional but they do 
@@ -6,18 +6,18 @@
 
 #SBATCH --comment="SLURM - Test Job"                    # An arbitrary comment on the job
 
-#SBATCH --job-name="SHERPA Job no. 23"                  # Give this job an arbitrary name
+#SBATCH --job-name="Number crunching job no. 23"        # Give this job an arbitrary name
 
 #SBATCH --mail-type=ALL                                 # When to send mail 
                                                         # (BEGIN, END, FAIL, REQUEUE, ALL)
 
-#SBATCH --mail-user=my.username                         # Where to send mail.  Either an IPPP
-                                                        # username or an email address
+#SBATCH --mail-user=my.username@example.com             # Where to send mail.  Either a
+                                                        # Linux/UNIX username or an email address
 
 #SBATCH --requeue                                       # On failure, requeue for another try
 #SBATCH --verbose                                       # Increase informational messages
 
-#SBATCH --workdir="/mt/batch/users/mdj/job9001/"        # Set current directory before job starts
+#SBATCH --workdir="/mt/batch/users/mdj/crunch23/"       # Set current directory before job starts
 
 #SBATCH --error="%j.err"                                # Direct STDERR here (file identifier), 
                                                         # %j is substituted for the job number
@@ -25,7 +25,7 @@
 #SBATCH --output="%j.out"                               # Direct STDOUT here (file identifier), 
                                                         # %j is substituted for the job number
 
-#SBATCH --export="EDITOR=/bin/vi"                       # Set arbitrary environment variables
+#SBATCH --export="DISPLAY=:0"                           # Set arbitrary environment variables
 
 #SBATCH --get-user-env                                  # Import your user environment setup
 
@@ -36,7 +36,10 @@
 
 # From this point you treat this file like a shell script, running your code as necessary
 
-/mt/home/mdj/test-qsub/a.out
+/mt/home/mdj/crunch/a.out 23 1 foo bar
+
+# Everything below this line (except for calling exit) is optional but included
+# to give you an idea of what you may do
 
 # Dump the environment that the job uses to a text file in the current directory
 env > environment
